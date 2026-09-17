@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en-NZ">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Pohutukawa Pest Control — part of the Professional Pest Control group. Licensed pest control for homes and businesses from Manukau to Pokeno, including Waiheke Island. Call 09 536 6690.">
+<title>Pohutukawa Pest Control</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FBF6EC;
+    --bg-alt:#F1E7D2;
+    --card:#FFFFFF;
+    --ink:#20281F;
+    --ink-soft:#4B5745;
+    --crimson:#AD1428;
+    --crimson-deep:#7E0E1D;
+    --green:#2E5D3A;
+    --green-deep:#1C3C24;
+    --gold:#B07E2A;
+    --border:rgba(32,40,31,0.12);
+    --shadow:0 18px 40px -22px rgba(32,40,31,0.35);
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#151C14;
+      --bg-alt:#1C2519;
+      --card:#1F2A1D;
+      --ink:#F1ECDD;
+      --ink-soft:#C3CDBB;
+      --crimson:#E2586A;
+      --crimson-deep:#C13345;
+      --green:#7FB489;
+      --green-deep:#5C9468;
+      --gold:#D9AE5D;
+      --border:rgba(241,236,221,0.14);
+      --shadow:0 18px 40px -20px rgba(0,0,0,0.55);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#151C14;
+    --bg-alt:#1C2519;
+    --card:#1F2A1D;
+    --ink:#F1ECDD;
+    --ink-soft:#C3CDBB;
+    --crimson:#E2586A;
+    --crimson-deep:#C13345;
+    --green:#7FB489;
+    --green-deep:#5C9468;
+    --gold:#D9AE5D;
+    --border:rgba(241,236,221,0.14);
+    --shadow:0 18px 40px -20px rgba(0,0,0,0.55);
+  }
+
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Work Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding-inline:0;
+  }
+  h1,h2,h3{
+    font-family:'Fraunces',Georgia,'Times New Roman',serif;
+    font-weight:600;
+    line-height:1.08;
+    text-wrap:balance;
+    margin:0;
+    color:var(--ink);
+  }
+  p{color:var(--ink-soft);line-height:1.6;margin:0;}
+  a{color:inherit;}
+  .wrap{max-width:1120px;margin-inline:auto;padding-inline:24px;}
+  .eyebrow{
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    font-weight:600;
+    color:var(--crimson);
+  }
+
+  /* Header */
+  header{
+    position:sticky;top:env(safe-area-inset-top,0px);z-index:40;
+    background:color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:16px;padding-block:14px;
+  }
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none;}
+  .brand svg{width:34px;height:34px;flex:none;}
+  .brand-word{font-family:'Fraunces',serif;font-weight:600;font-size:1.08rem;letter-spacing:-0.01em;}
+  .brand-word span{display:block;font-family:'Work Sans',sans-serif;font-weight:600;font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--green);}
+  nav.links{display:flex;gap:28px;align-items:center;}
+  nav.links a{
+    font-size:0.92rem;font-weight:500;text-decoration:none;color:var(--ink-soft);
+    transition:color .15s ease;
+  }
+  nav.links a:hover,nav.links a:focus-visible{color:var(--crimson);}
+  .call-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--crimson);color:#fff;
+    padding:10px 18px;border-radius:999px;
+    font-weight:600;font-size:0.88rem;text-decoration:none;
+    box-shadow:var(--shadow);
+    border:1px solid var(--crimson-deep);
+    white-space:nowrap;
+  }
+  .call-btn:hover{background:var(--crimson-deep);}
+  .call-btn svg{width:15px;height:15px;}
+  @media (max-width:760px){
+    nav.links{display:none;}
+  }
+
+  /* Hero */
+  .hero{
+    position:relative;overflow:hidden;
+    border-bottom:1px solid var(--border);
+    background:
+      radial-gradient(60% 90% at 88% 12%, color-mix(in srgb, var(--crimson) 14%, transparent), transparent 70%),
+      var(--bg-alt);
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr 0.85fr;gap:48px;align-items:center;
+    padding-block:68px 56px;
+  }
+  @media (max-width:860px){
+    .hero-grid{grid-template-columns:1fr;padding-block:40px 32px;gap:32px;}
+  }
+  .hero h1{font-size:clamp(2.1rem,4.6vw,3.4rem);}
+  .hero h1 em{font-style:normal;color:var(--crimson);}
+  .hero p.lede{font-size:1.08rem;max-width:46ch;margin-top:18px;}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;}
+  .btn-ghost{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:10px 20px;border-radius:999px;
+    border:1.5px solid var(--border);
+    font-weight:600;font-size:0.92rem;text-decoration:none;color:var(--ink);
+    background:var(--card);
+  }
+  .btn-ghost:hover{border-color:var(--green);color:var(--green-deep);}
+  .badges{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:34px;}
+  .badge{display:flex;align-items:center;gap:8px;font-size:0.82rem;font-weight:600;color:var(--ink-soft);}
+  .badge svg{width:16px;height:16px;color:var(--green);flex:none;}
+  .hero-art{display:flex;align-items:center;justify-content:center;}
+  .hero-art svg{width:100%;max-width:340px;height:auto;}
+
+  /* Section scaffolding */
+  section{padding-block:64px;}
+  .section-head{max-width:640px;margin-bottom:36px;}
+  .section-head h2{font-size:clamp(1.6rem,3vw,2.15rem);margin-top:8px;}
+  .section-head p{margin-top:12px;font-size:1.02rem;}
+
+  /* Services */
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  @media (max-width:860px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.services-grid{grid-template-columns:1fr;}}
+  .svc-card{
+    background:var(--card);border:1px solid var(--border);border-radius:18px;
+    padding:26px 22px;display:flex;flex-direction:column;gap:14px;
+    box-shadow:var(--shadow);
+  }
+  .svc-icon{
+    width:46px;height:46px;border-radius:12px;
+    background:color-mix(in srgb, var(--green) 14%, transparent);
+    display:flex;align-items:center;justify-content:center;flex:none;
+  }
+  .svc-icon svg{width:24px;height:24px;color:var(--green-deep);}
+  .svc-card h3{font-size:1.08rem;font-weight:600;}
+  .svc-card p{font-size:0.92rem;}
+  .svc-card.wide{grid-column:span 1;}
+
+  /* Why us */
+  .why-band{background:var(--green-deep);color:#fff;border-radius:24px;padding:44px 36px;}
+  .why-band .section-head p,.why-band .section-head .eyebrow{color:#DCE9DE;}
+  .why-band .eyebrow{color:var(--gold);}
+  .why-band h2{color:#fff;}
+  .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  @media (max-width:860px){.why-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.why-grid{grid-template-columns:1fr;}}
+  .why-item{display:flex;flex-direction:column;gap:10px;}
+  .why-item svg{width:26px;height:26px;color:var(--gold);}
+  .why-item h3{color:#fff;font-size:1.02rem;font-weight:600;font-family:'Work Sans',sans-serif;}
+  .why-item p{color:#CFE0D2;font-size:0.9rem;}
+
+  /* Areas */
+  .areas-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start;}
+  @media (max-width:860px){.areas-grid{grid-template-columns:1fr;gap:28px;}}
+  .suburb-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+  .pill{
+    padding:8px 16px;border-radius:999px;background:var(--card);
+    border:1px solid var(--border);font-size:0.86rem;font-weight:600;
+  }
+  .map-card{
+    background:var(--card);border:1px solid var(--border);border-radius:20px;
+    padding:26px;box-shadow:var(--shadow);
+  }
+  .map-card svg{width:100%;height:auto;}
+
+  /* Process */
+  .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;counter-reset:step;}
+  @media (max-width:860px){.process-grid{grid-template-columns:repeat(2,1fr);}}
+  @media (max-width:560px){.process-grid{grid-template-columns:1fr;}}
+  .step{position:relative;padding-top:8px;}
+  .step-num{
+    font-family:'Fraunces',serif;font-size:2rem;color:var(--crimson);
+    display:block;margin-bottom:8px;
+  }
+  .step h3{font-size:1.02rem;font-weight:600;margin-bottom:6px;}
+  .step p{font-size:0.9rem;}
+
+  /* CTA band */
+  .cta-band{
+    background:linear-gradient(135deg,var(--crimson) 0%,var(--crimson-deep) 100%);
+    border-radius:24px;padding:48px 36px;color:#fff;
+    display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;
+  }
+  .cta-band h2{color:#fff;font-size:clamp(1.5rem,3vw,2rem);}
+  .cta-band p{color:#F7DEE1;margin-top:8px;max-width:44ch;}
+  .cta-actions{display:flex;flex-wrap:wrap;gap:12px;}
+  .btn-solid{
+    background:#fff;color:var(--crimson-deep);padding:12px 22px;border-radius:999px;
+    font-weight:700;text-decoration:none;font-size:0.94rem;display:inline-flex;align-items:center;gap:8px;
+  }
+  .btn-outline{
+    border:1.5px solid rgba(255,255,255,0.6);color:#fff;padding:12px 22px;border-radius:999px;
+    font-weight:600;text-decoration:none;font-size:0.94rem;display:inline-flex;align-items:center;gap:8px;
+  }
+
+  footer{border-top:1px solid var(--border);padding-block:36px;}
+  .foot-grid{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:flex-start;}
+  .foot-brand{display:flex;align-items:center;gap:10px;}
+  .foot-brand svg{width:26px;height:26px;}
+  .foot-links{display:flex;flex-direction:column;gap:6px;font-size:0.88rem;color:var(--ink-soft);}
+  .foot-links a{text-decoration:none;color:var(--ink-soft);}
+  .foot-links a:hover{color:var(--crimson);}
+  .fine{margin-top:26px;font-size:0.78rem;color:var(--ink-soft);opacity:0.75;}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" fill="var(--green-deep)"/>
+        <g stroke="var(--crimson)" stroke-width="2.4" stroke-linecap="round">
+          <line x1="24" y1="24" x2="24" y2="9"/>
+          <line x1="24" y1="24" x2="34" y2="14"/>
+          <line x1="24" y1="24" x2="37" y2="24"/>
+          <line x1="24" y1="24" x2="34" y2="34"/>
+          <line x1="24" y1="24" x2="24" y2="39"/>
+          <line x1="24" y1="24" x2="14" y2="34"/>
+          <line x1="24" y1="24" x2="11" y2="24"/>
+          <line x1="24" y1="24" x2="14" y2="14"/>
+        </g>
+        <circle cx="24" cy="24" r="5.5" fill="var(--gold)"/>
+      </svg>
+      <span class="brand-word">Pohutukawa<span>Pest Control</span></span>
+    </a>
+    <nav class="links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#areas">Areas</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="call-btn" href="tel:+6495366690">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      09 536 6690
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Manukau to Pokeno &amp; Waiheke Island</p>
+        <h1>Deep roots.<br><em>Fast response.</em></h1>
+        <p class="lede">The pohutukawa clings to the toughest cliffs on the coast and still flowers bright red every summer. That's the standard we hold our pest control to — reliable, local, and built to handle whatever your property throws at us.</p>
+        <div class="hero-ctas">
+          <a class="call-btn" href="tel:+6495366690">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Call 09 536 6690
+          </a>
+          <a class="btn-ghost" href="tel:+64210783622">Text or call 021 078 3622</a>
+        </div>
+        <div class="badges">
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Licensed &amp; insured</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Free, no-obligation quotes</span>
+          <span class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Satisfaction guaranteed</span>
+        </div>
+        <p style="margin-top:18px;font-size:0.82rem;color:var(--ink-soft);">Part of the <strong>Professional Pest Control</strong> group.</p>
+      </div>
+      <div class="hero-art">
+        <svg viewBox="0 0 320 360" fill="none" aria-hidden="true">
+          <path d="M160 340 C150 260 120 240 70 210" stroke="var(--green-deep)" stroke-width="6" stroke-linecap="round"/>
+          <path d="M160 340 C170 250 210 230 250 190" stroke="var(--green-deep)" stroke-width="6" stroke-linecap="round"/>
+          <path d="M160 340 C158 230 160 180 160 120" stroke="var(--green-deep)" stroke-width="7" stroke-linecap="round"/>
+          <g>
+            <ellipse cx="90" cy="195" rx="34" ry="16" fill="var(--green)" transform="rotate(-25 90 195)"/>
+            <ellipse cx="235" cy="175" rx="34" ry="16" fill="var(--green)" transform="rotate(20 235 175)"/>
+            <ellipse cx="150" cy="105" rx="30" ry="15" fill="var(--green)" transform="rotate(-6 150 105)"/>
+            <ellipse cx="190" cy="125" rx="30" ry="15" fill="var(--green)" transform="rotate(18 190 125)"/>
+          </g>
+          <g>
+            <circle cx="150" cy="90" r="16" fill="var(--crimson-deep)"/>
+            <g stroke="var(--crimson)" stroke-width="3" stroke-linecap="round">
+              <line x1="150" y1="90" x2="150" y2="52"/>
+              <line x1="150" y1="90" x2="180" y2="62"/>
+              <line x1="150" y1="90" x2="188" y2="90"/>
+              <line x1="150" y1="90" x2="180" y2="118"/>
+              <line x1="150" y1="90" x2="150" y2="128"/>
+              <line x1="150" y1="90" x2="120" y2="118"/>
+              <line x1="150" y1="90" x2="112" y2="90"/>
+              <line x1="150" y1="90" x2="120" y2="62"/>
+            </g>
+            <circle cx="150" cy="90" r="6" fill="var(--gold)"/>
+          </g>
+          <g>
+            <circle cx="210" cy="150" r="12" fill="var(--crimson-deep)"/>
+            <g stroke="var(--crimson)" stroke-width="2.4" stroke-linecap="round">
+              <line x1="210" y1="150" x2="210" y2="122"/>
+              <line x1="210" y1="150" x2="232" y2="132"/>
+              <line x1="210" y1="150" x2="238" y2="150"/>
+              <line x1="210" y1="150" x2="232" y2="168"/>
+              <line x1="210" y1="150" x2="210" y2="178"/>
+              <line x1="210" y1="150" x2="188" y2="168"/>
+            </g>
+            <circle cx="210" cy="150" r="4.5" fill="var(--gold)"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What We Treat</p>
+        <h2>Pest problems, sorted properly.</h2>
+        <p>Targeted treatments for the pests that actually turn up in Auckland homes and workplaces — not a one-size-fits-all spray.</p>
+      </div>
+      <div class="services-grid">
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15c0-4 3-8 8-8s8 4 8 8-3 4-8 4-8 0-8-4Z"/><circle cx="9" cy="13" r="1"/><path d="M20 12h2M3 15l-2 1M3 12l-2-1"/></svg></div>
+          <h3>Rodent control</h3>
+          <p>Rats and mice — safe baiting, exclusion advice, and follow-up so they don't come back.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
+          <h3>Insect control</h3>
+          <p>Ants, spiders, fleas, bed bugs and borer, treated at the source, not just where you see them.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 12c3-4 8-5 9-2-1 3-5 4-9 2Zm0 0c-3-4-8-5-9-2 1 3 5 4 9 2Z"/><path d="M12 12v9"/></svg></div>
+          <h3>Flying insects</h3>
+          <p>Wasp nests, flies and moths dealt with quickly — especially useful before summer gatherings.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="13" rx="7" ry="5"/><path d="M6 10 4 7M18 10l2-3M9 8V5M15 8V5"/></svg></div>
+          <h3>Cockroach control</h3>
+          <p>Gel and spray programmes for the species we actually see in NZ kitchens and roof voids.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="9" width="18" height="12" rx="1"/><path d="M9 21v-6h6v6M9 9V5a3 3 0 0 1 6 0v4"/></svg></div>
+          <h3>Commercial pest control</h3>
+          <p>Scheduled visits and compliance-ready documentation for shops, offices, food premises, schools, kindergartens, storage facilities, warehouses, manufacturing sites and 3PL business-to-business sites.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 8l7-5 7 5M5 8v9l7 5 7-5V8"/></svg></div>
+          <h3>Not sure what it is?</h3>
+          <p>Send us a photo or description and we'll tell you straight what you're dealing with — free.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="wrap">
+      <div class="why-band">
+        <div class="section-head">
+          <p class="eyebrow">Why Homeowners Choose Us</p>
+          <h2>No jargon. No hard sell. Just pests handled.</h2>
+        </div>
+        <div class="why-grid">
+          <div class="why-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 12 2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+            <h3>Licensed technicians</h3>
+            <p>Every job is done by trained, security-screened staff working to NZ pest control standards.</p>
+          </div>
+          <div class="why-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4Z"/></svg>
+            <h3>Family &amp; pet-safe</h3>
+            <p>Treatments matched to your home, with clear guidance on staying safe while they work.</p>
+          </div>
+          <div class="why-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <h3>Fast local response</h3>
+            <p>Based south of Manukau and focused on this patch through to Pokeno and Waiheke — we're never far away.</p>
+          </div>
+          <div class="why-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4.5 8-11V5l-8-3-8 3v6c0 6.5 8 11 8 11Z"/></svg>
+            <h3>Guaranteed results</h3>
+            <p>Not happy with the outcome? We'll come back and make it right, free of charge.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="areas">
+    <div class="wrap areas-grid">
+      <div>
+        <p class="eyebrow">Where We Work</p>
+        <h2 style="margin-top:8px;">Manukau south to Pokeno — and out to Waiheke.</h2>
+        <p style="margin-top:14px;">We cover the whole stretch south of Manukau through to Pokeno, everything in between, plus Waiheke Island. It's a big patch, but it's ours — we know the area's pest patterns better than anyone driving in from across town.</p>
+        <div class="suburb-list">
+          <span class="pill">Manukau</span>
+          <span class="pill">Manurewa</span>
+          <span class="pill">Papakura</span>
+          <span class="pill">Drury</span>
+          <span class="pill">Karaka</span>
+          <span class="pill">Pukekohe</span>
+          <span class="pill">Waiuku</span>
+          <span class="pill">Pokeno</span>
+          <span class="pill">Waiheke Island</span>
+        </div>
+      </div>
+      <div class="map-card">
+        <svg viewBox="0 0 300 220" aria-hidden="true">
+          <rect x="0" y="0" width="300" height="220" rx="14" fill="none"/>
+          <path d="M40 30c40-10 90 0 110 20s70 10 100 40-10 60-50 70-120 10-150-20S0 40 40 30Z" fill="var(--bg-alt)" stroke="var(--border)"/>
+          <g fill="var(--crimson)">
+            <circle cx="90" cy="70" r="5"/><circle cx="100" cy="100" r="5"/>
+            <circle cx="115" cy="125" r="5"/><circle cx="140" cy="150" r="5"/>
+            <circle cx="170" cy="172" r="5"/><circle cx="205" cy="188" r="5"/>
+            <circle cx="240" cy="60" r="5"/>
+          </g>
+          <g font-family="Work Sans, sans-serif" font-size="10" fill="var(--ink-soft)">
+            <text x="60" y="62">Manukau</text>
+            <text x="106" y="96">Manurewa</text>
+            <text x="60" y="128">Papakura</text>
+            <text x="100" y="148">Drury</text>
+            <text x="150" y="168">Pukekohe</text>
+            <text x="180" y="200">Pokeno</text>
+            <text x="205" y="52">Waiheke Is.</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How It Works</p>
+        <h2>Four steps, start to finish.</h2>
+      </div>
+      <div class="process-grid">
+        <div class="step"><span class="step-num">01</span><h3>Get in touch</h3><p>Call or send through a description or photo — we'll give you a straight answer, fast.</p></div>
+        <div class="step"><span class="step-num">02</span><h3>Free assessment</h3><p>We look at what's actually going on and quote before any work starts. No surprises.</p></div>
+        <div class="step"><span class="step-num">03</span><h3>Targeted treatment</h3><p>We treat the cause, not just the symptoms, using the right product for the job.</p></div>
+        <div class="step"><span class="step-num">04</span><h3>Follow-up &amp; guarantee</h3><p>We check back in, and if pests return within the guarantee period, so do we — free.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>Got pests? Let's sort it.</h2>
+          <p>Free quotes, straight talk, and technicians who actually turn up when they say they will.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn-solid" href="tel:+6495366690">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            09 536 6690
+          </a>
+          <a class="btn-outline" href="tel:+64210783622">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            021 078 3622
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <svg viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" fill="var(--green-deep)"/>
+        <g stroke="var(--crimson)" stroke-width="2.4" stroke-linecap="round">
+          <line x1="24" y1="24" x2="24" y2="9"/><line x1="24" y1="24" x2="34" y2="14"/>
+          <line x1="24" y1="24" x2="37" y2="24"/><line x1="24" y1="24" x2="34" y2="34"/>
+          <line x1="24" y1="24" x2="24" y2="39"/><line x1="24" y1="24" x2="14" y2="34"/>
+          <line x1="24" y1="24" x2="11" y2="24"/><line x1="24" y1="24" x2="14" y2="14"/>
+        </g>
+        <circle cx="24" cy="24" r="5.5" fill="var(--gold)"/>
+      </svg>
+      <div>
+        <div style="font-family:'Fraunces',serif;font-weight:600;">Pohutukawa Pest Control</div>
+        <div style="font-size:0.8rem;color:var(--ink-soft);">Manukau to Pokeno &amp; Waiheke</div>
+        <div style="font-size:0.78rem;color:var(--ink-soft);opacity:0.8;margin-top:2px;">Part of the Professional Pest Control group</div>
+      </div>
+    </div>
+    <div class="foot-links">
+      <a href="tel:+6495366690">09 536 6690 (office)</a>
+      <a href="tel:+64210783622">021 078 3622 (mobile)</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Get a free quote</a>
+    </div>
+  </div>
+  <div class="wrap fine">© <span id="yr"></span> Pohutukawa Pest Control. All rights reserved.</div>
+</footer>
+
+<script>
+  try{ document.getElementById('yr').textContent = new Date().getFullYear(); }catch(e){}
+</script>
+</body>
+</html>
