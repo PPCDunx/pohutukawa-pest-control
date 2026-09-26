@@ -278,3 +278,22 @@
   .team-card .role{font-size:0.82rem;color:var(--crimson);font-weight:600;margin-bottom:10px;}
   .team-card p{font-size:0.9rem;}
 
+  /* Booking / quote form */
+  .form-h2{font-size:1.15rem;margin-top:36px;margin-bottom:16px;}
+  .form-h2:first-of-type{margin-top:0;}
+  .form-field{margin-bottom:16px;}
+  .form-field label{display:block;font-size:0.86rem;font-weight:600;margin-bottom:6px;color:var(--ink);}
+  .form-field input,.form-field textarea{
+    width:100%;padding:13px 16px;border-radius:12px;border:1px solid var(--border);
+    background:var(--card);color:var(--ink);font-family:'Work Sans',sans-serif;font-size:0.95rem;
+  }
+  .form-field input:focus,.form-field textarea:focus{outline:2px solid var(--green);outline-offset:1px;}
+  .form-field textarea{resize:vertical;}
+  .form-note{font-size:0.86rem;margin-top:-4px;margin-bottom:24px;}
+  .form-note a{color:var(--crimson);text-decoration:none;}
+  .form-note a:hover{text-decoration:underline;}
+  .form-submit{border:none;cursor:pointer;width:100%;justify-content:center;font-size:1rem;padding:14px 22px;}
+  .form-submit:disabled{opacity:0.7;cursor:default;}
+  .form-status{margin-top:14px;font-size:0.92rem;font-weight:600;}
+  .form-status.success{color:var(--green-deep);}
+  .form-status.error{color:var(--crimson);}
