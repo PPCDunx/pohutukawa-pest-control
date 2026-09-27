@@ -297,3 +297,20 @@
   .form-status{margin-top:14px;font-size:0.92rem;font-weight:600;}
   .form-status.success{color:var(--green-deep);}
   .form-status.error{color:var(--crimson);}
+  /* FAQ */
+  .faq-list{display:flex;flex-direction:column;gap:14px;max-width:820px;}
+  .faq-item{
+    background:var(--card);border:1px solid var(--border);border-radius:16px;
+    padding:20px 24px;box-shadow:var(--shadow);
+  }
+  .faq-item summary{
+    cursor:pointer;font-weight:600;font-size:1rem;color:var(--ink);
+    list-style:none;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  .faq-item summary::-webkit-details-marker{display:none;}
+  .faq-item summary::after{
+    content:"+";font-size:1.3rem;color:var(--crimson);flex:none;line-height:1;
+    transition:transform .15s ease;
+  }
+  .faq-item[open] summary::after{transform:rotate(45deg);}
+  .faq-item p{margin-top:14px;font-size:0.94rem;}
