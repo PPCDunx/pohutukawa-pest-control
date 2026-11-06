@@ -313,4 +313,4 @@
     transition:transform .15s ease;
   }
   .faq-item[open] summary::after{transform:rotate(45deg);}
-  .faq-item p{margin-top:14px;font-size:0.94rem;}   .tagline{margin-top:8px;font-size:0.95rem;font-weight:600;color:var(--ink-soft);}
+  .faq-item p{margin-top:14px;font-size:0.94rem;} .tagline{margin-top:8px;font-size:0.95rem;font-weight:600;color:var(--ink-soft);}
